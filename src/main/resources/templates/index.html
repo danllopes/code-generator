@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="danllopes">
+    <title>Qr Code Generator</title>
+
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/65d4be96d1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="default-padding" aria-label="Cabeçalho principal">
+    <nav class="navbar center">
+        <!-- Logo -->
+        <div class="nav-logo">
+            <a href="index.html" aria-label="Página inicial">
+                <span>Code</span>
+                <span>Generator</span>
+            </a>
+        </div>
+        <!-- Links sociais -->
+        <ul class="social-media" aria-label="Links para redes sociais">
+            <li><a href="https://github.com/danllopes" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/danielandersonlopes/" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="https://t.me/dllopes" title="Telegram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i></a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="default-padding">
+    <!-- Formulário -->
+    <section id="form-section" aria-labelledby="form-title">
+        <h2 id="form-title">Pronto para gerar seu QR Code?</h2>
+        <div class="separator" aria-hidden="true"></div>
+        <form id="qr-form" method="post" aria-describedby="form-description">
+            <input type="text" id="input-url" name="url" placeholder="Insira a URL ou texto" maxlength="255" required aria-label="Insira URL ou texto para gerar o QR Code">
+            <button type="submit" name="generate" aria-label="Gerar QR Code">Gerar QR Code</button>
+        </form>
+    </section>
+
+    <!-- Qr Code gerado-->
+    <section id="qr-code-section" aria-labelledby="qr-code-title">
+        <h3 id="qr-code-title" class="sr-only">QR Code gerado</h3>
+        <div id="qr-code-container" aria-label="QR Code gerado">
+            <img src="" alt="Imagem do QR Code gerado">
+        </div>
+    </section>
+</main>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
