@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* === VARIÁVEIS GLOBAIS === */
+:root {
+    /* Cores */
+    --primary-color: #13293d;
+    --secondary-color: orangered;
+    --accent-color: orange;
+    --text-color: black;
+    --bg-color: white;
+    --button-hover-bg: #ff5700;
+    --button-hover-text: #13293d;
+
+    /* Tamanhos */
+    --font-base: 16px;
+    --font-large: 2.25rem;
+    --font-medium: 1rem;
+    --font-small: 0.875rem;
+
+    --border-radius: 0.625rem;
+    --container-width: 90%; /* Responsividade */
+    --form-width: 30rem;
+    --qr-size: 12.5rem;
+}
+
+/* === PADRÃO === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--bg-color);
+    font-size: var(--font-base);
+    color: var(--text-color);
+}
+
+/* === ESTILOS GLOBAIS === */
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--bg-color);
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+/* Centralizar itens */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Padding padrão */
+.default-padding {
+    padding: 0 3%;
+}
+
+/* === HEADER E NAVBAR === */
+header {
+    height: 5rem;
+    width: 100vw;
+    background-color: var(--primary-color);
+}
+
+.navbar {
+    justify-content: space-between;
+    height: 100%;
+}
+
+.navbar a {
+    font-size: var(--font-medium);
+    margin: 0 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-logo a {
+    display: grid;
+}
+
+.nav-logo a span {
+    font-size: 1.35rem;
+    font-weight: bold;
+}
+
+.nav-logo a span:nth-of-type(1) {
+    color: var(--secondary-color);
+}
+
+.nav-logo a span:nth-of-type(2) {
+    color: var(--accent-color);
+    margin: -0.850rem 0 0 2.04rem; /* Ajustes */
+}
+
+.navbar ul li:hover a {
+    color: var(--button-hover-bg);
+}
+
+.social-media a {
+    font-size: 3rem;
+    margin: 0 0.9375rem;
+}
+
+/* === MAIN E SECTIONS === */
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: calc(100% - 5rem);
+}
+
+main section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 3.125rem 0;
+    width: var(--container-width);
+    margin: 0 auto;
+}
+
+#form-section {
+    justify-content: center;
+    gap: 1.875rem;
+}
+
+#form-section h2 {
+    font-size: var(--font-large);
+    text-align: center;
+}
+
+#form-section .separator {
+    height: 0.3125rem;
+    width: 12.5rem;
+    background-color: var(--text-color);
+    margin-top: -1.875rem;
+    border-radius: 50px;
+}
+
+#qr-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.875rem;
+    width: 100%;
+}
+
+#qr-form input {
+    border-radius: var(--border-radius);
+    border: 1px solid var(--text-color);
+    padding: 0.625rem;
+    text-align: center;
+    width: var(--form-width);
+    font-size: var(--font-medium);
+}
+
+#qr-form input::placeholder {
+    font-style: italic;
+  }
+
+#qr-form button {
+    border-radius: 50px;
+    border: none;
+    padding: 0.625rem;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: var(--font-medium);
+}
+
+#qr-form button:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--bg-color);
+}
+
+#qr-code-section {
+    padding: 0;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#qr-code-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid var(--text-color) 0.1875rem;
+    height: var(--qr-size);
+    width: var(--qr-size);
+    padding: 0.625rem;
+}
+
+#qr-code-container img {
+    display: block;
+    opacity: 0;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    height: 100%;
+    width: 100%;
+    transition: opacity 0.3s ease;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+    #qr-form input {
+        width: 90%;
+    }
+
+    #qr-form button {
+            font-size: 0.875rem;
+            padding: 0.5rem;
+        }
+
+    .social-media a {
+        font-size: 2rem;
+        margin: 0 0.625rem;
+    }
+}
